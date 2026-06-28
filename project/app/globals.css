@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 9%;
+    --primary: 217 91% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 20% 20%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 12% 42%;
+    --accent: 217 91% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 217 91% 44%;
+    --radius: 0.625rem;
+    --chart-1: 217 91% 44%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  .dark {
+    --background: 210 20% 6%;
+    --foreground: 0 0% 98%;
+    --card: 210 20% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 20% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 20% 14%;
+    --muted-foreground: 210 12% 56%;
+    --accent: 217 91% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 217 91% 56%;
+    --chart-1: 217 91% 56%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border box-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ─── Keyframes ─── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(37,99,235,0.15); }
+  50%       { box-shadow: 0 0 40px rgba(37,99,235,0.30); }
+}
+
+/* ─── Animation utility classes ─── */
+.animate-fade-up    { animation: fade-up      0.6s ease-out forwards; }
+.animate-fade-in    { animation: fade-in      0.5s ease-out forwards; }
+.animate-slide-left { animation: slide-in-left 0.6s ease-out forwards; }
+.animate-slide-right{ animation: slide-in-right 0.6s ease-out forwards; }
+.animate-scale-in   { animation: scale-in     0.5s ease-out forwards; }
+.animate-float      { animation: float        3s   ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow   2s   ease-in-out infinite; }
+
+/* ─── Stagger delays ─── */
+.stagger-1 { animation-delay: 0.10s; opacity: 0; }
+.stagger-2 { animation-delay: 0.20s; opacity: 0; }
+.stagger-3 { animation-delay: 0.30s; opacity: 0; }
+.stagger-4 { animation-delay: 0.40s; opacity: 0; }
+.stagger-5 { animation-delay: 0.50s; opacity: 0; }
+.stagger-6 { animation-delay: 0.60s; opacity: 0; }
+.stagger-7 { animation-delay: 0.70s; opacity: 0; }
+.stagger-8 { animation-delay: 0.80s; opacity: 0; }
+
+/* ─── Shared helpers ─── */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(217 91% 44%), hsl(200 80% 50%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-gradient {
+  background: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(0 0% 100%) 100%);
+}
